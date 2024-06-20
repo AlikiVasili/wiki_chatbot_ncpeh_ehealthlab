@@ -1,0 +1,30 @@
+Page 59
+ National eHealth Authority - Cyprus
+eP-B Service (Pharmacist role)
+Click European patient’s data
+NCP eHealth(Cyprus) Portal - Pharmacist (eDispensation)
+Page 60
+ National eHealth Authority - Cyprus
+Select the country of origin of EU patient
+Search Patient from Greece. Provide GR national security number
+NCP eHealth(Cyprus) Portal - Pharmacist (eDispensation)
+Page 61
+ National eHealth Authority - Cyprus
+Retrieve Personal Details. Define the reason of accessing the patient data and click
+“Retrieve Medical Documents List”
+Preview eP List
+Open eP PDF
+NCP eHealth(Cyprus) Portal - Pharmacist (eDispensation)
+Page 62
+ National eHealth Authority - Cyprus
+Open eP CDA XML through CDA Display Viewer
+NCP eHealth(Cyprus) Portal - Pharmacist (eDispensation)
+Page 63
+ National eHealth Authority - Cyprus
+Dispense eP
+NCP eHealth(Cyprus) Portal - Pharmacist (eDispensation)
+Page 64
+ National eHealth Authority - Cyprus
+Dispense eP
+Note: 
+Once your operation is completed, make sure to Logout properly from the system.

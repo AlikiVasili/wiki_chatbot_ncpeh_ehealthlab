@@ -1,0 +1,51 @@
+ NCP eHealth(CY) Portal - Doctors in the Country of Residence
+Page 12
+ National eHealth Authority - Cyprus
+You will write your ePrescription in your own language. When the patient will ask for
+medicines in the country of travel, the pharmacist will receive thee Prescription both
+in theoriginal languageand in their own language. Translation is done automatically
+by the underlying digital infrastructure.
+What is the information available in the Patient Summary? 
+The Patient Summary can contain the following patient clinical data: 
+- Alerts and allergies; 
+- Medical history (vaccination, past problems, surgical procedures before the last six
+months); 
+- Current medical state (current problems, medical devices and implants, intake of
+medicines, treatment recommendations, surgical procedures within the last six
+months); 
+- Social history; 
+- Pregnancy history (ifrelevant); 
+- Physical findings; 
+- Diagnostic tests.
+It is not mandatory that all this information exists. This means that there might be
+situations when only part of the information is available. For instance when the
+information was not available in the systems; the information could not be translated
+into other languages; there is no known information for that patient; etc.
+Refer to the training provided by your national contact point for eHealth on how to
+read the information in the Patient Summary. If you have not received any training,
+please contact your national contact point for eHealth.
+In what language do I have to write my ePrescription? 
+ NCP eHealth(CY) Portal - Doctors in the Country of Travel
+Page 13
+ National eHealth Authority - Cyprus
+How do I verify the patient's identity before accessing their Patient
+Summary?
+Once you have identified yourself in thehospital information system and you checked
+the patient's identity, you will request to access the patient's data provided by the
+underlying digital infrastructure. If the data are not available for crossborder
+services, the system will inform you. Before accessing the Patient summary for  the
+consultation,you must inform the patient on their healthdata will be processed in the
+country of travel. Depending on your national privacy laws, you may have to ask the
+patient to sign a new Privacy statement. If you are not able to access the Patient
+Summary, the system will give you an error message and inform you about the
+cause. One of the causes might be that the patient did not make their health data
+available before leaving their country of residence. You should advise the patient to
+contact their doctor when back in their country of residence and perform the
+consultation as usual.
+How do I access the Patient Summary of a foreign citizen? 
+Each country has defined the type of identification
+documents that the patient can show when asking for
+an electronic cross border service (Patient Summary or
+ePrescription). You need to check with your own
+national contact point for eHealth what identification
+document you have to ask to the patient.
