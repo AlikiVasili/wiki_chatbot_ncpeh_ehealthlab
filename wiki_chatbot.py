@@ -2,17 +2,13 @@ import torch
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 import os
 
+os.environ["HF_TOKEN"] = "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"
+
 # Function to generate response
 def generate_response(question, articles):
     context = template.format(question=question, articles=articles)
     response = pipeline_llama2(context)[0]['generated_text']
-    # Extract the answer part without unnecessary tokens
-    start_token = "\begin{blockquote}"
-    end_token = "\end{blockquote}"
-    start_index = response.find(start_token)
-    end_index = response.find(end_token)
-    if start_index != -1 and end_index != -1:
-        response = response[start_index + len(start_token):end_index].strip()
+    response = response.strip()
     return response
 
 # Initialize the model and tokenizer
@@ -22,7 +18,7 @@ tokenizer_llama2 = AutoTokenizer.from_pretrained(model_id_llama2)
 
 # Set up generation config
 generation_config = {
-    "do_sample": False,  # Use greedy decoding for speed
+    "do_sample": True,  # Use greedy decoding for speed
     "temperature": 0.01,
     "max_new_tokens": 128,  # Limit the number of tokens generated
     "eos_token_id": tokenizer_llama2.pad_token_id,
@@ -48,7 +44,7 @@ Answer:
 
 # Load the articles into memory
 articles = []
-article_dir = "articles_sum"  # Assuming articles are stored in this directory
+article_dir = "aticles_test"  # Assuming articles are stored in this directory
 for filename in os.listdir(article_dir):
     with open(os.path.join(article_dir, filename), "r", encoding="utf-8") as f:
         articles.append(f.read())
