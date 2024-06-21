@@ -1,15 +1,11 @@
 import torch
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import json
 import os
 
 os.environ["HF_TOKEN"] = "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"
-
-# Function to generate response
-def generate_response(question, articles):
-    context = template.format(question=question, articles=articles)
-    response = pipeline_llama2(context)[0]['generated_text']
-    response = response.strip()
-    return response
 
 # Initialize the model and tokenizer
 model_id_llama2 = "meta-llama/Llama-2-7b-hf"
@@ -25,7 +21,7 @@ generation_config = {
     "return_full_text": False,
 }
 
-# Set up the pipeline
+# Set up the pipeline (defined after the function definition to avoid issues with tokenizer sharing)
 pipeline_llama2 = pipeline(
     "text-generation",
     model=model_llama2,
@@ -35,27 +31,51 @@ pipeline_llama2 = pipeline(
     **generation_config
 )
 
+# Load the keywords from the file
+with open("article_keywords.json", "r", encoding="utf-8") as f:
+    keywords_dict = json.load(f)
+
+# Function to find the most relevant article
+def find_relevant_article(question, keywords_dict):
+    all_keywords = [" ".join(keywords) for keywords in keywords_dict.values()]
+    article_names = list(keywords_dict.keys())
+
+    # Create a list with the question and all keywords
+    documents = [question] + all_keywords
+
+    # Vectorize the documents
+    vectorizer = TfidfVectorizer().fit_transform(documents)
+    vectors = vectorizer.toarray()
+
+    # Compute cosine similarity
+    cosine_similarities = cosine_similarity(vectors[0:1], vectors[1:]).flatten()
+    highest_similarity_index = cosine_similarities.argmax()
+    print(article_names[highest_similarity_index])
+    return article_names[highest_similarity_index]
+
 # Define your template
-template = """You are an expert in answering questions related to the Deployment of Generic Cross Border eHealth in Cyprus. Given a question and relevant information from the articles inside the website of Deployment of Generic Cross Border eHealth in Cyprus, can you answer the question?
+template = """You are an expert in answering questions related to the Deployment of Generic Cross Border eHealth in Cyprus. Given a question and relevant information from the article '{article}', can you answer the question?
 Question: {question}
-Articles: {articles}
 Answer:
 """
 
-# Load the articles into memory
-articles = []
-article_dir = "aticles_test "  # Assuming articles are stored in this directory
-for filename in os.listdir(article_dir):
-    with open(os.path.join(article_dir, filename), "r", encoding="utf-8") as f:
-        articles.append(f.read())
+# Function to generate response
+def generate_response(question, relevant_article):
+    # Load the relevant article
+    with open(os.path.join("articles", relevant_article), "r", encoding="utf-8") as f:
+        article_text = f.read()
 
-# Combine articles into a single context
-articles_combined = " ".join(articles)
+    context = template.format(question=question, article=article_text)  # Corrected to use {article}
+    response = pipeline_llama2(context)[0]['generated_text']
+    response = response.strip()
+    return response
 
-# Loop for interactive question-answer session
+# Example usage with interactive question-answer session
 while True:
     user_question = input("Ask me a question (type 'quit' to exit): ")
     if user_question.lower() == 'quit':
         break
-    response = generate_response(user_question, articles_combined)
+
+    most_relevant_article = find_relevant_article(user_question, keywords_dict)
+    response = generate_response(user_question, most_relevant_article)
     print(response)
