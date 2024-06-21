@@ -44,7 +44,7 @@ Answer:
 
 # Load the articles into memory
 articles = []
-article_dir = "aticles_test"  # Assuming articles are stored in this directory
+article_dir = "aticles_test "  # Assuming articles are stored in this directory
 for filename in os.listdir(article_dir):
     with open(os.path.join(article_dir, filename), "r", encoding="utf-8") as f:
         articles.append(f.read())
