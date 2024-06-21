@@ -1,5 +1,9 @@
+import nltk
 from rake_nltk import Rake
 import os
+
+nltk.download('stopwords')
+nltk.download('punkt')
 
 # Initialize Rake
 r = Rake()

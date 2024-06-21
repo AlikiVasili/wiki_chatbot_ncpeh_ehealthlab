@@ -31,17 +31,19 @@ toc = {
 pdf_document = fitz.open(pdf_path)
 
 # Loop through each chapter in the TOC
+i = 0
 for chapter, (start_page, end_page) in toc.items():
     chapter_text = ""
     
     # Extract text from the specified page range
-    for page_num in range(start_page - 1, end_page):
+    for page_num in range(start_page-1, end_page):
         page = pdf_document.load_page(page_num)
         chapter_text += page.get_text("text")
     
     # Define the output file name
-    safe_chapter_title = chapter.replace(" ", "_").replace("–", "-")
-    output_file_path = os.path.join(output_dir, f'{safe_chapter_title}.txt')
+    title = f"article_{i}"
+    output_file_path = os.path.join(output_dir, f'{title}.txt')
+    i = i +1
     
     # Save the text to the file
     with open(output_file_path, 'w', encoding='utf-8') as output_file:

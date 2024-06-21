@@ -1,0 +1,22 @@
+ NCP eHealth(Cyprus) Portal - User Functions 
+Page 28
+ National eHealth Authority - Cyprus
+of the
+system providing the
+user functionality for
+all the assigned
+modules namely
+(Patients, Doctors
+issuing Patient
+Summary Reports
+and medicine
+prescriptions for
+local citizens, Doctrors examining EU visitors and pharmacists executing
+ePrescriptions for EU Visitors.
+This is the main
+module 
+The  NCP User Functions (Admins,Healthcare professionals)
+ NCP eHealth(Cyprus) Portal - Login process
+Page 29
+ National eHealth Authority - Cyprus
+Login Screen of the NCP eHealth(CY) Portal

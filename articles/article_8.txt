@@ -1,0 +1,109 @@
+ NCP eHealth(Cyprus) Portal - Process flow Diagram
+Page 19
+ National eHealth Authority - Cyprus
+Graphical flow  of MyHealth@EU  Service 
+Ref. Concept from IHE Connectathon 2022 (Building the Bridge) presentation
+ NCP eHealth(Cyprus) Portal - Registry Roles
+Page 20
+ National eHealth Authority - Cyprus
+The Registry Portal is
+designed for two
+main user groups:
+administrative staff
+and healthcare
+professionals such as
+physicians and
+pharmacists.
+Healthcare
+professionals can
+easily access their
+personal and demographic information. Additionally, physicians and pharmacists can
+download a secure certificate to their computers, ensuring safe and verified
+communication with the system.                                                                                 
+On the administrative side, the system supports three roles. Administrators in NeHA
+can create and assign new Operator roles. Operators have access to comprehensive
+details about physicians, pharmacists, and pharmacies, and they can oversee all
+thecertificates issued by the portal. Finally, Pharmacy Operators can view all
+pharmacy and pharmacist details and can update and add information to the
+system.                                                                                                                        
+The NCPeH CY framework in Cyprus represents a crucial advancement in
+safeguarding healthcare data and ensuring patient privacy and security. At the heart
+of this system lies a network of roles and responsibilities designed to uphold the
+integrity of sensitive information and facilitate secure cross-border services. The
+following subsections outline the key roles and corresponding responsibilities. within
+the NCPeH CY framework, elucidating the collaborative efforts required to fortify the
+healthcare ecosystem against cyber threats and privacy breaches.
+Roles and responsibilities of the National Registry Portal 
+          Introduction - NCP Registry Roles
+ NCP eHealth(Cyprus) Portal - Registry Roles
+Page 21
+ National eHealth Authority - Cyprus
+Role Administrator - NeHA 
+The Administrator NeHA is a central figure in the management of the healthcare
+administration system NCPeH CY.This role is endowed with creating new users a level of
+access and control, primarily focusing on the access control and management of the
+system. 
+Responsibilities 
+Adding New Roles: The Administrator NeHA is responsible for creating new roles within
+the system to accommodate evolving administrative needs. 
+This includes the crucial role of the Operator -NeHA, which plays a significant part in
+managing pharmacists and pharmacies.
+Role NeHA Operator
+Notice 
+The NCPeHealth(CY) Roles Described in this section are to be managed by
+the Officers of The National eHealth Authority of Cyprus under agreed
+governance with the Cyprus Medical Association and Cyprus
+Pharmaceutical Association respectively.
+ NCP eHealth(Cyprus) Portal - Registry Roles
+Page 22
+ National eHealth Authority - Cyprus
+The NeHa Operator role is pivotal in managing the system's day-to-day operations,
+with a focus on pharmacists, pharmacies, and certification processes.
+: Viewing all pharmacists, physicians, and
+pharmacies within the system. 
+ The ability to edit details of pharmacists and pharmacies to ensure
+up-to-date and accurate information. 
+: Empowered to enable or disable pharmacists and
+physicians within the system, ensuring only authorized individuals have access.
+ Viewing active, expired, and revoked certificates, along with
+the authority to revoke certificates, ensuring compliance and integrity in certification
+processes.
+Responsibilities 
+Management of Professionals and Facilities
+Editing Details:
+Enable/Disable Functionality
+Certificate Oversight:
+Role Pharmacy Operator
+ NCP eHealth(Cyprus) Portal - Registry Roles
+Page 23
+ National eHealth Authority - Cyprus
+The Pharmacy Operator plays a crucial role in the operational management of
+pharmacies and pharmacists within the system. 
+ 
+ 
+ 
+ 
+Responsibilities 
+Adding New Entities: Capable of adding new pharmacists and pharmacies into the
+system, expanding the network of healthcare providers.
+Management of Pharmacists: Enabling or disabling pharmacists to maintain an
+up-to-date roster of active professionals. 
+Editing Pharmacy Details: Updating and managing the details of pharmacies to
+ensure accurate and current information.
+ NCP eHealth(Cyprus) Portal - Registry Roles
+Page 24
+ National eHealth Authority - Cyprus
+.
+Pharmacists have a role centred around the creation and management of
+certificates, crucial for the verification and authentication of professional
+qualifications and services.                                                                                         
+ Responsibilities
+Creation of Certificates: Both roles are authorized to create new certificates,
+facilitating the recognition of professional qualifications and services. 
+Viewing Certificates: They have the capability to view their active, revoked, and
+expired certificates, providing them with a comprehensive overview of their
+certification status. 
+Revocation of Certificates: Both Pharmacists and Physicians hold the authority to
+revoke active certificates, ensuring the system reflects their current professional
+standing accurately
+Role Pharmacist

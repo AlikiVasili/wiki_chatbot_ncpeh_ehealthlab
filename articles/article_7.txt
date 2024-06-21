@@ -1,0 +1,28 @@
+ NCP eHealth(Cyprus) Portal - Access Requirement
+Page 18
+ National eHealth Authority - Cyprus
+https://cge.cyprus.gov.cy/cyloginregistration/register
+:
+In order to be able to Login into the NCP eHealth(CY) Portal either as a:
+                                                                                                                   
+       PATIENT for retreiving personal infrmation for your Patient summary   
+           report  or your ePrescriptions,                                                           
+                         
+  DOCTOR for writing a Patient report for a Cypriot Citizen, or retriving  a     
+    Patient Summary Report of an EU Visitor,       
+                                              
+  PHARMACIST for executing an ePrescription of an EU Visitor,                     
+  
+                              you need a CY Login Account.                                       
+                                
+This is a secure Online Personal Account that gives you access to the
+Government services of the republic of Cyprus.
+                                                                                                             
+ Detail instructions on how to create your CY Login Account and manage
+your personal profile is provided in the link of the Cyprus Government Portal
+below
+ Make sure that  the "Two Factor
+Authentication (2FA)" from within your CYLogin
+Profile is enabled.
+Important:
+ACCESS REQUIREMENTS FOR USING THE NCP eHealth(CY) PORTAL
