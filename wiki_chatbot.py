@@ -70,6 +70,12 @@ def generate_response(question, relevant_article):
     response = response.strip()
     return response
 
+def extract_before_first_question(response):
+    question_index = response.find("Question:")
+    if question_index != -1:
+        return response[:question_index].strip()
+    return response.strip()
+
 # Example usage with interactive question-answer session
 while True:
     user_question = input("Ask me a question (type 'quit' to exit): ")
@@ -78,4 +84,7 @@ while True:
 
     most_relevant_article = find_relevant_article(user_question, keywords_dict)
     response = generate_response(user_question, most_relevant_article)
+
+    response = extract_before_first_question(response)
+
     print(response)
