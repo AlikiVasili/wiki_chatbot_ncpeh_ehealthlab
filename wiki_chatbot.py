@@ -76,6 +76,32 @@ def extract_before_first_question(response):
         return response[:question_index].strip()
     return response.strip()
 
+def remove_repetitions(text):
+    # Normalize the text by replacing newlines with spaces
+    text = text.replace('\n', ' ')
+    
+    # Split the text into sentences
+    sentences = text.split('. ')
+    seen = set()
+    result = []
+
+    for sentence in sentences:
+        # Normalize sentence by stripping whitespace
+        normalized_sentence = sentence.strip()
+        
+        # Check for repetition
+        if normalized_sentence in seen:
+            break
+        seen.add(normalized_sentence)
+        result.append(normalized_sentence)
+    
+    # Join the result back into a single string with proper sentence endings
+    cleaned_text = '. '.join(result)
+    if text.endswith('.'):
+        cleaned_text += '.'
+
+    return cleaned_text
+
 # Example usage with interactive question-answer session
 while True:
     user_question = input("Ask me a question (type 'quit' to exit): ")
@@ -86,5 +112,6 @@ while True:
     response = generate_response(user_question, most_relevant_article)
 
     response = extract_before_first_question(response)
+    response = remove_repetitions(response)
 
     print(response)
