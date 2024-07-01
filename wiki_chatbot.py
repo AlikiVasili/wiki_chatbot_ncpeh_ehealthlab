@@ -16,7 +16,7 @@ tokenizer_llama2 = AutoTokenizer.from_pretrained(model_id_llama2)
 generation_config = {
     "do_sample": True,  # Use greedy decoding for speed
     "temperature": 0.01,
-    "max_new_tokens": 128,  # Limit the number of tokens generated
+    "max_new_tokens": 256,  # Limit the number of tokens generated
     "eos_token_id": tokenizer_llama2.pad_token_id,
     "return_full_text": False,
 }
