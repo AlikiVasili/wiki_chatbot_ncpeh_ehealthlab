@@ -2,3 +2,7 @@ Comments on results:
 1) We still have repeated parts in the answers
 2) Some answers stops and another one starts in the same response with ### -> so we must cut the response in ###
 3) 128 tokens are not enough for the most of the responses
+4) 256 fixes some responses still not enough for some questions
+5) new questions are generated in some cases of 256 tokens
+6) some responses need review
+7) we must check if the wrong responses are because of the articles luck of information
