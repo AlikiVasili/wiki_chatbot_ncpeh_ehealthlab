@@ -73,7 +73,10 @@ def generate_response(question, relevant_article):
 def extract_before_first_question(response):
     question_index = response.find("Question:")
     if question_index != -1:
-        return response[:question_index].strip()
+        response = response[:question_index]
+    hashtag_index = response.find("### ")
+    if hashtag_index != -1:
+        response = response[:hashtag_index]
     return response.strip()
 
 def remove_repetitions(text):
