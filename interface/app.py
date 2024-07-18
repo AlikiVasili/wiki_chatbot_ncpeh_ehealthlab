@@ -44,6 +44,12 @@ CORS(app)  # Enable CORS
 with open("article_keywords.json", "r", encoding="utf-8") as f:
     keywords_dict = json.load(f)
 
+# Template for response generation
+template = """You are an expert in answering questions related to the Deployment of Generic Cross Border eHealth in Cyprus. Given a question and relevant information from the article '{article}', can you answer the question?
+Question: {question}
+Answer:
+"""
+
 # Function to find the most relevant article
 def find_relevant_article(question, keywords_dict):
     all_keywords = [" ".join(keywords) for keywords in keywords_dict.values()]
@@ -57,21 +63,14 @@ def find_relevant_article(question, keywords_dict):
 
 # Function to generate response
 def generate_response(question, relevant_article):
-    
-    # Template for response generation
-    template = """You are an expert in answering questions related to the Deployment of Generic Cross Border eHealth in Cyprus. Given a question and relevant information from the article '{article}', can you answer the question?
-    Question: {question}
-    Answer:
-    """
-    print("Template: " + template)
-
     with open(os.path.join("articles", relevant_article), "r", encoding="utf-8") as f:
         article_text = f.read()
-
+        
     context = template.format(question=question, article=article_text)
     print("Generating response...")
     response = pipeline_llama2(context)[0]['generated_text']
-    return response.strip()
+    response = response.strip()
+    return response
 
 # Route for answering questions
 @app.route('/ask', methods=['POST'])
@@ -85,6 +84,7 @@ def ask():
     print("Most Relevant article: " + most_relevant_article)
     
     response = generate_response(user_question, most_relevant_article)
+
     print("Response: " + response)
 
     return jsonify({"response": response})
