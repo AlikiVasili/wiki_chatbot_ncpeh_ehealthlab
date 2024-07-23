@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 import os
+import re
 
 os.environ["HF_TOKEN"] = "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"
 
@@ -79,6 +80,22 @@ def extract_before_first_question(response):
         response = response[:hashtag_index]
     return response.strip()
 
+def cut_before_first_question(text):
+    # Regular expression to find the first question mark
+    question_pattern = re.compile(r'\?')
+    match = question_pattern.search(text)
+    
+    if match:
+        # Cut the text before the first question mark
+        cut_off_index = match.start()
+        # Find the start of the sentence that contains the question mark
+        sentence_start_index = text.rfind('.', 0, cut_off_index) + 1
+        # Return the text up to this sentence
+        return text[:sentence_start_index].strip()
+    
+    # If no question mark is found, return the original text
+    return text
+
 def remove_repetitions(text):
     # Normalize the text by replacing newlines with spaces
     text = text.replace('\n', ' ')
@@ -116,5 +133,6 @@ while True:
 
     response = extract_before_first_question(response)
     response = remove_repetitions(response)
+    response = cut_before_first_question(response)
 
     print(response)
