@@ -46,6 +46,9 @@ results_128 = evaluate_responses(df, 'Evaluation_128')
 # Evaluate for 256 tokens
 results_256 = evaluate_responses(df, 'Evaluation_256')
 
+# Evaluate for 512 tokens
+results_512 = evaluate_responses(df, 'Evaluation_512')
+
 # Print results
 print("\nResults for 128 tokens:")
 print(f"Accuracy: {results_128['accuracy']}")
@@ -62,3 +65,11 @@ print(f"Recall: {results_256['recall']}")
 print(f"F1 Score: {results_256['f1']}")
 print(f"Confusion Matrix: \n{results_256['confusion_matrix']}")
 print(f"Response Completeness: {results_256['response_completeness']}")
+
+print("\nResults for 512 tokens:")
+print(f"Accuracy: {results_512['accuracy']}")
+print(f"Precision: {results_512['precision']}")
+print(f"Recall: {results_512['recall']}")
+print(f"F1 Score: {results_256['f1']}")
+print(f"Confusion Matrix: \n{results_512['confusion_matrix']}")
+print(f"Response Completeness: {results_512['response_completeness']}")
