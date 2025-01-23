@@ -18,10 +18,6 @@ Ensure you have the following installed on your system:
 git clone https://github.com/username/wiki_chatbot_ncpeh_ehealthlab.git
 cd wiki_chatbot_ncpeh_ehealthlab
 ```
-- Install the required Python libraries:
-```bash
-pip install -r requirements.txt
-```
 ### Running the Console-Based Version
 To start the chatbot in your terminal, simply run the following command:
 ```bash
